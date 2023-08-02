@@ -1,0 +1,139 @@
+CREATE DATABASE login_system;
+
+CREATE TABLE `password_recovery` (
+`email` varchar(100) UNIQUE,
+`otp` int(4),
+`expDate` date
+);
+
+
+CREATE TABLE users (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE `applicantseducation` (
+  `id` int(25) NOT NULL,
+  `TertiaryStudies` varchar(25) NOT NULL,
+  `lastAttendedSchool` varchar(25) NOT NULL,
+  `finalYear` int(4) NOT NULL,
+  `certificate` varchar(25) NOT NULL,
+  `gradePassed` varchar(15) NOT NULL,
+  `upgrading` varchar(5) NOT NULL,
+  `admissionType` varchar(25) NOT NULL
+)
+
+CREATE TABLE `coursechoice` (
+  `id` int(25) NOT NULL,
+  `firstchoice` varchar(25) NOT NULL,
+  `secondchoice` varchar(25) NOT NULL,
+  `thirdchoice` varchar(25) NOT NULL,
+  `fourthchoice` varchar(25) NOT NULL
+) 
+
+
+CREATE TABLE `parent/guardian` (
+  `id` int(25) NOT NULL,
+  `pname` varchar(25) NOT NULL,
+  `PSname` varchar(25) NOT NULL,
+  `P_ID_number` int(25) NOT NULL,
+  `title` varchar(5) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `cellNo` varchar(15) NOT NULL,
+  `AltCellNo` varchar(15) NOT NULL,
+  `role` varchar(10) NOT NULL
+) 
+
+CREATE TABLE `personaldetails` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(25) NOT NULL,
+  `lname` varchar(25) NOT NULL,
+  `email` varchar(100) UNIQUE,
+  `id_pass_number` int(25) NOT NULL,
+  `title` varchar(10) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `race` varchar(15) NOT NULL,
+  `province` varchar(80) NOT NULL,
+  `nationality` varchar(80) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `disability` varchar(5) NOT NULL,
+  `marital_status` varchar(15) NOT NULL,
+  `language` varchar(25) NOT NULL
+) 
+
+CREATE TABLE `universitychoice` (
+  `id` int(25) NOT NULL,
+  `email` varchar(100),
+  `university1` varchar(30) NOT NULL,
+  `university2` varchar(30) NOT NULL,
+  `university3` varchar(30) NOT NULL,
+  `university4` varchar(30) NOT NULL
+)
+
+-- Indexes for table `applicantseducation`
+--
+ALTER TABLE `applicantseducation`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `coursechoice`
+--
+ALTER TABLE `coursechoice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `parent/guardian`
+--
+ALTER TABLE `parent/guardian`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `personaldetails`
+--
+ALTER TABLE `personaldetails`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `universitychoice`
+--
+ALTER TABLE `universitychoice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `applicantseducation`
+--
+ALTER TABLE `applicantseducation`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `coursechoice`
+--
+ALTER TABLE `coursechoice`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `parent/guardian`
+--
+ALTER TABLE `parent/guardian`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `personaldetails`
+--
+ALTER TABLE `personaldetails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `universitychoice`
+--
+ALTER TABLE `universitychoice`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

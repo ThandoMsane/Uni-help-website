@@ -1,0 +1,149 @@
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.section{
+    width: 90%;
+    margin: auto;
+}
+
+.title {
+    color: #F86D2D;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+
+.second-header{
+    background-color: #033416;
+}
+
+hr {
+    margin: 1rem 0;
+}
+
+details {
+    padding: 0 1rem;
+    background-color: rgb(255, 244, 244);
+    border: 1px thick black;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 25px;
+    width:  100%;
+}
+
+details > summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.25rem;
+    cursor:pointer;
+}
+
+details[open] summary ~ * {
+    animation: sweep .6s ease-in-out;
+}
+
+@keyframes sweep {
+    from {
+        opacity: 0;
+        margin-top: -10px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+details > summary::after {
+    content: url("image.png");
+    display: inline-flex;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    max-width: 0.5%;
+}
+
+@media (max-width: 600px) {
+    .image{
+        display: block;
+        margin: auto;
+    }
+}
+
+details[open] > summary::after {
+    transform: rotate(90deg);
+}
+
+details > summary::-webkit-details-marker{
+    display: none;
+}
+
+.details-content {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+.details-content > p {
+    margin: 1rem 0;
+    font-family: Helvetica;
+}
+
+h1 {
+    font-size: larger;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    padding-bottom: 2rem;
+    width: 85%;
+}
+
+.image {
+    float: right;
+    padding-right: 2.5rem;
+    position: relative;
+    margin-top: -1.5rem;
+    object-fit: cover;
+    max-width: 40%;
+}
+
+#unisa_image, #WSU_image, #UFH_image {
+    width: 260px;
+}
+
+
+.link {
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+
+.link :hover {
+    font-size: 18px;
+    color: #F86D2D;
+}
+
+.link :active {
+    color: red;
+}
